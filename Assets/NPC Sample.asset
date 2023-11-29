@@ -9,16 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed2117553d69ba64fa0e6b3c2d89af5e, type: 3}
+  m_Script: {fileID: 11500000, guid: a4c8c733519196d4280d818d75cdd95f, type: 3}
   m_Name: NPC Sample
   m_EditorClassIdentifier: 
-  name: Sample
+  name: Librarian
   dialogue:
-  - Hi! How is it going?
-  - Would you like some help?
-  - It should be towards the back of the library.
-  - Let me know if you need anything else.
+  - Hello
+  - Do you need help?
+  - Bye
   playerDialogue:
-  - I am struggling to locate this book.
-  - Can you point me in the direction of this book?
-  - Thanks for your help!
+  - Hi
+  - Yes
