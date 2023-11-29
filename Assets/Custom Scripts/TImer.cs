@@ -10,8 +10,10 @@ public class TImer : MonoBehaviour
     private float TimeLeft;
     private bool TimerOn = false;
     public TextMeshProUGUI timeTextBox;
+    public DialogueManager dialogue;
 
     public UnityEvent TimerExpired;
+
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +46,8 @@ public class TImer : MonoBehaviour
 
     public void EnableTimer()
     {
-        TimerOn = true;
+        if (dialogue.getTutorialDone())
+        { TimerOn = true; }
     }
     public void DisableTimer()
     {

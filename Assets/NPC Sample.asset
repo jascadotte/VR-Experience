@@ -13,10 +13,14 @@ MonoBehaviour:
   m_Name: NPC Sample
   m_EditorClassIdentifier: 
   name: Librarian
+  tutorialDialogue:
+  - Hello, this is tutorial text
+  - more tutorial text
+  - even more tutorial text
+  - After the player goes through all the tutorial text, regular dialogue will start
+    and when the player leaves the librarians vicinity, the timer will start
   dialogue:
-  - Hello
-  - Do you need help?
-  - Bye
-  playerDialogue:
-  - Hi
-  - Yes
+  - Hello, this is dialogue after the tutorial. After the library tells you the tutorial,
+    itll automatically go to this dialogue instead
+  - here id probably give you advice
+  - It also loops after im done talking
