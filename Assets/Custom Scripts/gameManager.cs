@@ -11,9 +11,13 @@ public class gameManager : MonoBehaviour
     /// </summary>
     public int maxScore;
     /// <summary>
-    /// The nuber of books a player got
+    /// The number of books a player got
     /// </summary>
     private int score;
+    /// <summary>
+    /// Timer object
+    /// </summary>
+    public TImer timer;
 
     // Start is called before the first frame update
     void Start()
@@ -31,17 +35,13 @@ public class gameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Invoked when player has got the max number oof books allowed
-    /// </summary>
-    public UnityEvent maxScoreReached;
-    /// <summary>
-    /// Checks if the number of books has exceeded its maximum and invokes an event if it does.
+    /// Checks if the number of books has exceeded its maximum and disables the timer if it does.
     /// </summary>
     private void checkWin()
     {
         if (score >= maxScore)
         {
-            maxScoreReached.Invoke();
+            timer.DisableTimer();
         }
     }
     /// <summary>
