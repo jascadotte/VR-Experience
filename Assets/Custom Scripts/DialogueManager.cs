@@ -18,6 +18,7 @@ public GameObject dialogueUI;
 public Text npcDialogueBox;
 
     private bool tutorialDone = false;
+    private bool gameDone = false;
     /// <summary>
     /// Counter that keeps track of which dialogue option the player sees. 0 is the first one and the subsequent numbers are subsequent dialogues
     /// </summary>
@@ -36,8 +37,7 @@ public Text npcDialogueBox;
         dialogueUI.SetActive(true);
         npcName.text = npc.name;
         dialogueCounter = 0;
-        if(tutorialDone) npcDialogueBox.text = npc.dialogue[dialogueCounter];
-        else npcDialogueBox.text = npc.tutorialDialogue[dialogueCounter];
+        NextDialogue();
 
     }
 
@@ -52,21 +52,28 @@ public Text npcDialogueBox;
     /// </summary>
     public void NextDialogue()
     {
-        dialogueCounter++;
-
-        if (dialogueCounter < npc.tutorialDialogue.Length & !tutorialDone)
+        if (gameDone)
         {
-            npcDialogueBox.text = npc.tutorialDialogue[dialogueCounter];
+            if (dialogueCounter >= npc.finishedDialogue.Length) dialogueCounter = 0;
+            npcDialogueBox.text = npc.finishedDialogue[dialogueCounter];
+            
         }
-        else if (dialogueCounter < npc.dialogue.Length)
+        else if (tutorialDone)
         {
+            if (dialogueCounter >= npc.dialogue.Length) dialogueCounter = 0;
             npcDialogueBox.text = npc.dialogue[dialogueCounter];
         }
+        else
+        {
 
-        if (dialogueCounter >= npc.dialogue.Length - 1)
+            npcDialogueBox.text = npc.tutorialDialogue[dialogueCounter];
+        }
+
+        dialogueCounter++;
+        if (dialogueCounter >= npc.tutorialDialogue.Length & !tutorialDone)
         {
             tutorialDone = true;
-            dialogueCounter = -1;
+            dialogueCounter = 0;
         }
     }
 
@@ -75,4 +82,8 @@ public Text npcDialogueBox;
         return tutorialDone;
     }
 
+    public void gameFinished()
+    {
+        gameDone = true;
+    }
 }
