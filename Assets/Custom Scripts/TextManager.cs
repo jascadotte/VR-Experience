@@ -14,37 +14,38 @@ public class TextManager : MonoBehaviour
     void Start()
     {
         text.text = code;
+        StartCoroutine(change());
     }
 
     // Update is called once per frame
     void Update()
     {
+    }
+
+    private IEnumerator change()
+    {
         if (timer.getTimeLeft() <= 300)
         {
-    
+            Debug.Log("test1");
             float minutes = Mathf.FloorToInt(timer.getTimeLeft() / 60);
-            waitNormal(minutes);
+            Debug.Log(minutes);
+            yield return new WaitForSecondsRealtime(5);
+            Debug.Log("jumbling code");
             text.text = jumbleCode(code);
-
-            waitJumbled(minutes);
+            Debug.Log("jumbling code successful");
+            yield return new WaitForSecondsRealtime(5);
+            Debug.Log("unjumbling code successful");
             text.text = code;
         }
+        StartCoroutine(change());
     }
 
-    private IEnumerator waitNormal(float minutes)
-    {
-        yield return new WaitForSecondsRealtime(Random.Range(12f - 5f / ((minutes + 1)/2), 12f));
-    }
-
-    private IEnumerator waitJumbled(float minutes)
-    {
-        yield return new WaitForSecondsRealtime(Random.Range(3f, 3f + 8f / (minutes + 1)));
-    }
 
     private string jumbleCode(string code)
     {
         char[] scrambledCode=new char[code.Length];
-        for(int i = 0, j; i < code.Length; i++)
+        int startingLength = code.Length;
+        for(int i = 0, j; i < startingLength; i++)
         {
             j = Random.Range(0, code.Length);
             scrambledCode[i] = code[j];
