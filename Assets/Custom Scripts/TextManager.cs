@@ -24,7 +24,7 @@ public class TextManager : MonoBehaviour
 
     private IEnumerator change()
     {
-        if (timer.getTimeLeft() <= 300)
+        if (timer.getTimeLeft() <= 240)
         {
             Debug.Log("test1");
             float minutes = Mathf.FloorToInt(timer.getTimeLeft() / 60);

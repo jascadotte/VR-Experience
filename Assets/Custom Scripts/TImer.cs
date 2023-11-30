@@ -35,6 +35,11 @@ public class TImer : MonoBehaviour
             }
             updateTimer(TimeLeft);
         }
+
+        if (TimeLeft <= 0)
+        {
+            timeTextBox.text = "Time is over, please see the librarian";
+        }
     }
 
     private void updateTimer(float time)
@@ -58,6 +63,9 @@ public class TImer : MonoBehaviour
     {
         return TimeLeft;
     }
-
+    public void StopTimer()
+    {
+        TimeLeft = 0;
+    }
 
 }
