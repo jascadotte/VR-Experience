@@ -14,17 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Librarian
   tutorialDialogue:
-  - 'Hello! I am the librarian. I need assistance finding books. '
+  - Hello! I am the librarian. Thank you so much for volunteering to help us. (Press
+    the grab button/ bottom trigger to advance the dialogue)
   - 'Here is a list containing the codes for each book. The code has three letters
     followed by two digits. '
+  - We're only open for 5 more hours, please just collect as many books as possible
+    for your first day. Place the collected books on the second table.
+  - If you need any help, just come over to my desk to chat!
+  - To move, use the joystick on the controllers.
+  - To grab a book, press the bottom trigger at the bottom of the controller.
   dialogue:
-  - You have five minutes to collect as many books as you can. Place the collected
-    books on the second table.
-  - Your timer starts now. Good luck!
   - The first letter dictates the shelf it is located on and the two following letters
     are the authors name. The last two digits dictate where on the shelf the book
     is.
   - The bookshelves are labeled alphabetically. The shelves are numbered from 01-99.
-  - To move, use the joystick on the controllers.
-  - To move, use the joystick on the controllers.
-  - To grab a book, press the bottom trigger at the bottom of the controller.
+  finishedDialogue:
+  - Placeholder finihsed dialogue
+  - This finished
+  - more placeholder
