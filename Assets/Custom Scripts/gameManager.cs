@@ -20,9 +20,9 @@ public class gameManager : MonoBehaviour
     /// </summary>
     public TextMeshProUGUI codeText;
     /// <summary>
-    /// array of book code text boxes
+    /// array of book text managers
     /// </summary>
-    public TextMeshProUGUI[] bookCodes;
+    public TextManager[] bookCodes;
 
     // Start is called before the first frame update
     void Start()
@@ -90,9 +90,9 @@ public class gameManager : MonoBehaviour
     /// </summary>
     public void updateCodeText()
     {
-        if (score < bookCodes.Length & timer.getTimeLeft()>0)
+        if (score < bookCodes.Length & timer.dialogue.getTutorialDone())
         {
-            codeText.text = "Next book code "+bookCodes[score].text;
+            codeText.text = "Next book code "+bookCodes[score].code;
         }
         else
         {

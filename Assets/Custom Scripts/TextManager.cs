@@ -14,6 +14,7 @@ public class TextManager : MonoBehaviour
     void Start()
     {
         text.text = code;
+        text.fontStyle = FontStyles.Bold;
         StartCoroutine(change());
     }
 
@@ -26,17 +27,15 @@ public class TextManager : MonoBehaviour
     {
         if (timer.getTimeLeft() <= 240)
         {
-            Debug.Log("test1");
             float minutes = Mathf.FloorToInt(timer.getTimeLeft() / 60);
-            Debug.Log(minutes);
-            yield return new WaitForSecondsRealtime(5);
-            Debug.Log("jumbling code");
+
+            yield return new WaitForSecondsRealtime(Random.Range(9f-(5-minutes),10f));
             text.text = jumbleCode(code);
-            Debug.Log("jumbling code successful");
-            yield return new WaitForSecondsRealtime(5);
-            Debug.Log("unjumbling code successful");
+
+            yield return new WaitForSecondsRealtime(Random.Range(3f, 4f+(5-minutes)));
             text.text = code;
         }
+        yield return new WaitForSecondsRealtime(1);
         StartCoroutine(change());
     }
 
