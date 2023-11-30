@@ -29,6 +29,5 @@ MonoBehaviour:
     is.
   - The bookshelves are labeled alphabetically. The shelves are numbered from 01-99.
   finishedDialogue:
-  - Placeholder finihsed dialogue
-  - This finished
-  - more placeholder
+  - The library is now closed.
+  - Thank you for your help! Have a great day.
