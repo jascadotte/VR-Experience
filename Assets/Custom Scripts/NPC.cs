@@ -13,9 +13,9 @@ public class NPC : ScriptableObject
     public new string name;
     [TextArea(3, 15)]
     
-    public string[] dialogue;
+    public string[] tutorialDialogue;
     [TextArea(3, 15)]
 
-    public string[] playerDialogue;
+    public string[] dialogue;
 
 }

@@ -9,16 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed2117553d69ba64fa0e6b3c2d89af5e, type: 3}
+  m_Script: {fileID: 11500000, guid: a4c8c733519196d4280d818d75cdd95f, type: 3}
   m_Name: NPC Sample
   m_EditorClassIdentifier: 
-  name: Sample
+  name: Librarian
+  tutorialDialogue:
+  - Hello, this is tutorial text
+  - more tutorial text
+  - even more tutorial text
+  - After the player goes through all the tutorial text, regular dialogue will start
+    and when the player leaves the librarians vicinity, the timer will start
   dialogue:
-  - Hi! How is it going?
-  - Would you like some help?
-  - It should be towards the back of the library.
-  - Let me know if you need anything else.
-  playerDialogue:
-  - I am struggling to locate this book.
-  - Can you point me in the direction of this book?
-  - Thanks for your help!
+  - Hello, this is dialogue after the tutorial. After the library tells you the tutorial,
+    itll automatically go to this dialogue instead
+  - here id probably give you advice
+  - It also loops after im done talking
