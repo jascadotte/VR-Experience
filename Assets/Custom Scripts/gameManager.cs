@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
+using TMPro;
 
 public class gameManager : MonoBehaviour
 {
-    /// <summary>
-    /// The max amount of books the player must get (>=1)
-    /// </summary>
-    public int maxScore;
     /// <summary>
     /// The number of books a player got
     /// </summary>
@@ -18,6 +15,14 @@ public class gameManager : MonoBehaviour
     /// Timer object
     /// </summary>
     public TImer timer;
+    /// <summary>
+    /// Textbox that shows next book code
+    /// </summary>
+    public TextMeshProUGUI codeText;
+    /// <summary>
+    /// array of book code text boxes
+    /// </summary>
+    public TextMeshProUGUI[] bookCodes;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +35,8 @@ public class gameManager : MonoBehaviour
     {
         //Check for new books
         checkBook();
+        //Update Code Text
+        updateCodeText();
         ///Check Win
         checkWin();
     }
@@ -39,9 +46,9 @@ public class gameManager : MonoBehaviour
     /// </summary>
     private void checkWin()
     {
-        if (score >= maxScore)
+        if (score >= bookCodes.Length)
         {
-            timer.DisableTimer();
+            timer.StopTimer();
         }
     }
     /// <summary>
@@ -76,5 +83,20 @@ public class gameManager : MonoBehaviour
     public int getScore()
     {
         return score;
+    }
+
+    /// <summary>
+    /// Updates the text box on the players UI that tells the player the next book they should get
+    /// </summary>
+    public void updateCodeText()
+    {
+        if (score < bookCodes.Length & timer.getTimeLeft()>0)
+        {
+            codeText.text = bookCodes[score].text;
+        }
+        else
+        {
+            codeText.text = "";
+        }
     }
 }
