@@ -54,5 +54,10 @@ public class TImer : MonoBehaviour
         TimerOn = false;
     }
 
+    public float getTimeLeft()
+    {
+        return TimeLeft;
+    }
+
 
 }
