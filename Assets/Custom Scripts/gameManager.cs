@@ -92,7 +92,7 @@ public class gameManager : MonoBehaviour
     {
         if (score < bookCodes.Length & timer.getTimeLeft()>0)
         {
-            codeText.text = bookCodes[score].text;
+            codeText.text = "Next book code "+bookCodes[score].text;
         }
         else
         {
