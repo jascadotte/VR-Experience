@@ -14,13 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Librarian
   tutorialDialogue:
-  - Hello, this is tutorial text
-  - more tutorial text
-  - even more tutorial text
-  - After the player goes through all the tutorial text, regular dialogue will start
-    and when the player leaves the librarians vicinity, the timer will start
+  - 'Hello! I am the librarian. I need assistance finding books. '
+  - 'Here is a list containing the codes for each book. The code has three letters
+    followed by two digits. '
   dialogue:
-  - Hello, this is dialogue after the tutorial. After the library tells you the tutorial,
-    itll automatically go to this dialogue instead
-  - here id probably give you advice
-  - It also loops after im done talking
+  - You have five minutes to collect as many books as you can. Place the collected
+    books on the second table.
+  - Your timer starts now. Good luck!
+  - The first letter dictates the shelf it is located on and the two following letters
+    are the authors name. The last two digits dictate where on the shelf the book
+    is.
+  - The bookshelves are labeled alphabetically. The shelves are numbered from 01-99.
+  - To move, use the joystick on the controllers.
+  - To move, use the joystick on the controllers.
+  - To grab a book, press the bottom trigger at the bottom of the controller.
